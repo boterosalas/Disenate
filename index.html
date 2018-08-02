@@ -3,8 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <title>Diseña-T</title>
-        <link rel="stylesheet" href="menu.css">
+        <title>DiseñaT</title>
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -12,22 +11,25 @@
     <body>
 
         <!-- mega menú -->
-        <div class="row mega-menu-dad">
+        <div class="menu-mobile">
+            <i class="fas fa-ellipsis-v" id="boton-menu-mobile"></i>
+        </div>
+        <div class="row mega-menu-dad" id="menu-mobile">
             <nav class="mega-menu-nav">
-                <div class="items-dad">
-                    <a href="./index.html" id="logo-home"></a>
+                <div class="items-dad logo-dad">
+                    <li id="logo-home"></li>
                 </div>
-                <div class="items-dad">
-                    <a href=""><li>Acerca</li></a>
-                    <a href="./servicios.html"><li>Servicios</li></a>
-                    <a href=""><li>Equipo</li></a>
-                    <a href=""><li>Proyectos</li></a>
+                <div class="items-dad options-dad">
+                    <li>Acerca</li>
+                    <li>Servicios</li>
+                    <li>Equipo</li>
+                    <li>Proyectos</li>
                 </div>
             </nav>
         </div>
         <!-- banner principal -->
         <div class="row principal-banner-dad">
-            <img class="banner" src="img/design.jpg" alt="Decoramos tu espacio">
+            <div class="banner"></div>
             <div class="questionnaire">
                 <h2>¿De qué se trata su proyecto?</h2>
                 <div class="questionnaire-button" id="maintenance-button">
@@ -40,11 +42,11 @@
         </div>
         <div class="principal-container">
             <!-- qué hacemos -->
-            <div class="row what-dad" id="what-dad">
+            <div class="row what-dad">
                 <h3 class="titles">¿Qué hacemos?</h3>
                 <div class="what-ch">
-                    <a class="img">
-                        <div class="img-ch img-mantenimiento" id="img-mantenimiento"></div>
+                    <a href="" class="img">
+                        <div class="img-ch img-mantenimiento"></div>
                     </a>
                     <div class="description">
                         <h3>Mantenimiento</h3>
@@ -52,8 +54,8 @@
                     </div>
                 </div>
                 <div class="what-ch">
-                    <a class="img">
-                        <div class="img-ch img-diseno" id="img-diseno"></div>
+                    <a href="" class="img">
+                        <div class="img-ch img-diseno"></div>
                     </a>
                     <div class="description">
                         <h3>Diseño</h3>
@@ -61,8 +63,8 @@
                     </div>
                 </div>
                 <div class="what-ch">
-                    <a class="img">
-                        <div class="img-ch img-jardineria" id="img-jardineria"></div>
+                    <a href="" class="img">
+                        <div class="img-ch img-jardineria"></div>
                     </a>
                     <div class="description">
                         <h3>Jardinería</h3>
