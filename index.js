@@ -8,6 +8,7 @@ var pasos_formulario = document.getElementById('pasos_formulario');
 var linea_number = document.getElementById('linea_number');
 var hoja_preguntas_dad = document.getElementById('hoja_preguntas_dad');
 var img_service_dad = document.getElementsByClassName('img-service-dad');
+var input_text = document.getElementsByClassName('input_text');
 for(let i = 0; i < img_service_dad.length; i++){
     img_service_dad[i].addEventListener('click',function(e){
         sessionStorage.setItem('service',img_service_dad[i].getAttribute('id'));
@@ -72,3 +73,29 @@ modal.addEventListener("click", function(e){
 boton_menu_mobile.addEventListener("click",function(){
     menu_mobile.classList.toggle('mega-menu-dad-active');
 })
+
+//validación tipo texto únicamente
+for(let i = 0; i < input_text.length; i++){
+    input_text[i].addEventListener('input',function(e){
+       // var valnum = /^[0-9]*$/;
+        let valor = this.value;
+        var valnum = /[^aA-zZ][^0-9]*$/;
+        if(valor!=undefined && valor !=""){
+            var hijos = this.parentNode.children;
+            if(valnum.test(this.value)){
+                for(let j = 0; j < hijos.length; j++){
+                    if(hijos[j].classList=="advertencia_tipo_campo"){
+                        hijos[j].style.display="block";
+                    }
+                }
+            }
+            else{
+                for(let j = 0; j < hijos.length; j++){
+                    if(hijos[j].classList=="advertencia_tipo_campo"){
+                        hijos[j].style.display="none";
+                    }
+                }
+            }
+        }
+    })
+}
