@@ -1,9 +1,19 @@
 window.addEventListener('load',function(){
-    if(sessionStorage.getItem('servicio-hijo')){
-        var servicio_hijo = sessionStorage.getItem('servicio-hijo');
-        var largo = servicio_hijo.length;
-        var seccion = servicio_hijo.slice(4,largo)+'-dad';
-    }else{var servicio_hijo = 0;}
-    console.log(seccion);
-    setTimeout(function(){alert();document.getElementById(seccion).scrollIntoView()},200);
+    var pos = 0;
+    function animacion_scroll(y){
+        var comienzo = setInterval(frame, 5);
+        function frame() {
+            if (pos == y) {
+                clearInterval(comienzo);
+            } else {
+                window.scrollBy(0,10);
+            }
+            pos+=10;
+        }
+    }
+    if(sessionStorage.getItem('service')){
+        var seccion = sessionStorage.getItem('service');
+        var alto = document.getElementById(seccion).offsetTop-60;
+        animacion_scroll(alto);
+    }
 })

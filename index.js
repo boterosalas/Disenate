@@ -7,6 +7,12 @@ var menu_mobile = document.getElementById('menuMobile');
 var pasos_formulario = document.getElementById('pasos_formulario');
 var linea_number = document.getElementById('linea_number');
 var hoja_preguntas_dad = document.getElementById('hoja_preguntas_dad');
+var img_service_dad = document.getElementsByClassName('img-service-dad');
+for(let i = 0; i < img_service_dad.length; i++){
+    img_service_dad[i].addEventListener('click',function(e){
+        sessionStorage.setItem('service',img_service_dad[i].getAttribute('id'));
+    })
+}
 var pos = 0;
 function animacion_number(elem,x){
     var comienzo = setInterval(frame, 5);
