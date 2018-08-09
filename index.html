@@ -12,12 +12,12 @@
 
         <!-- mega menú -->
         <div class="menu-mobile">
-            <i class="fas fa-ellipsis-v" id="boton-menu-mobile"></i>
+            <i class="fas fa-ellipsis-v" id="boton_menu_mobile"></i>
         </div>
-        <div class="row mega-menu-dad" id="menu-mobile">
+        <div class="row mega-menu-dad" id="menuMobile">
             <nav class="mega-menu-nav">
                 <div class="items-dad logo-dad">
-                    <li id="logo-home"></li>
+                    <li id="logoHome"></li>
                 </div>
                 <div class="items-dad options-dad">
                     <li>Acerca</li>
@@ -32,11 +32,8 @@
             <div class="banner"></div>
             <div class="questionnaire">
                 <h2>¿De qué se trata su proyecto?</h2>
-                <div class="questionnaire-button" id="maintenance-button">
-                    Mantenimiento
-                </div>
-                <div class="questionnaire-button" id="design-button">
-                    Diseño
+                <div class="questionnaire-button" id="cuentanos">
+                    Cuéntanos
                 </div>
             </div>
         </div>
@@ -97,8 +94,8 @@
                         <textarea name="mensaje" id="message" placeholder="Tu mensaje"></textarea>
                     </div>
                     <div class="form-group botonera">
-                        <div class="btn" id="btn-enviar">Enviar</div>
-                        <div class="btn" id="btn-cancelar">Cancelar</div>
+                        <div class="btn" id="btn_enviar_contacto">Enviar</div>
+                        <div class="btn" id="btn_cancelar_contacto">Cancelar</div>
                     </div>
                 </form>
                 <div class="networks-dad">
@@ -112,16 +109,26 @@
                 <div class="clientes-dad">
                     <h3>Nuestros clientes</h3>
                     <div class="clientes-ch" id="monterrey"></div>
-                    <div class="clientes-ch" id="casa-limpia"></div>
-                    <div class="clientes-ch" id="premium-plaza"></div>
-                    <div class="clientes-ch" id="san-nicolas"></div>
+                    <div class="clientes-ch" id="casaLimpia"></div>
+                    <div class="clientes-ch" id="premiumPlaza"></div>
+                    <div class="clientes-ch" id="sanNicolas"></div>
                 </div>
             </div>
         </div>
-        <div class="modal-dad" id="modal-dad">
-            <div class="modal-ch" id="modal-ch">
-                <i class="far fa-times-circle" id="cierre-modal"></i>
-                <h3>FORMULARIO</h3>
+        <div class="modal-dad-formulario" id="modal_dad_formulario">
+            <div class="modal-ch" id="modal_ch">
+                <i class="far fa-times-circle" id="cierreModal"></i>
+                <div class="hoja-preguntas-dad" id="hoja_preguntas_dad">
+                    <div class="hoja-preguntas" id="hoja1">Hoja Preguntas 1</div>
+                    <div class="hoja-preguntas" id="hoja2">Hoja Preguntas 2</div>
+                    <div class="hoja-preguntas" id="hoja3">Hoja Preguntas 3</div>
+                </div>
+                <div class="pasos-formulario" id="pasos_formulario">
+                    <span class="linea-number" id="linea_number"></span>
+                    <div class="number number--active number--grande" id="number_1">1</div>
+                    <div class="number mx-10" id="number_2">2</div>
+                    <div class="number" id="number_3">3</div>
+                </div>
             </div>
         </div>
         <script src="index.js" type="text/javascript"></script>

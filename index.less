@@ -52,7 +52,7 @@ body{
         .items-dad{
             display: flex;
             flex-direction: row;
-            #logo-home{
+            #logoHome{
                 width: 200px;
                 background-image: url("img/logo-disenate.png");
                 background-size: contain;
@@ -84,7 +84,7 @@ body{
         background: rgba(85, 85, 85, 0.8);
         bottom: 0px;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         color: @full-blanco;
@@ -103,18 +103,12 @@ body{
                 background: #fff;
             }
         }
-        #maintenance-button{
-            left: 25%;
-        }
-        #design-button{
-            right: 25%;
-        }
     }
     .banner{
         width: 100%;
         height: 80vh;
         min-height: 300px;
-        background-image: url("img/design.jpg");
+        background-image: url("img/maintenance.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -320,13 +314,13 @@ body{
             #monterrey{
                 background-image: url("img/monterrey-centrocomercial1.png");
             }
-            #san-nicolas{
+            #sanNicolas{
                 background-image: url("img/logoSanNicolas.png");
             }
-            #premium-plaza{
+            #premiumPlaza{
                 background-image: url("img/premium%20plaza.png");
             }
-            #casa-limpia{
+            #casaLimpia{
                 background-image: url("img/casa-limpia-logo-png-transparent.png");
             }
         }
@@ -340,9 +334,10 @@ body{
     font-weight: bold;
     font-size: 30px;
 }
-.modal-dad{
+.modal-dad-formulario{
+    transform: scale(0);
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     position: fixed;
     top: 0;
@@ -350,35 +345,92 @@ body{
     justify-content: center;
     align-items: center;
     background: rgba(204, 204, 204, 0.7);
-    transform: scale(0);
     z-index: 20;
     &--active{
         transform: scale(1);
     }
     .modal-ch{
-        width: 30%;
-        min-width: 300px;
-        max-width: 500px;
-        height: 65vh;
-        background-color: @blanco;
         transform: scale(0);
+        width: 100%;
+        min-width: 320px;
+        max-width: 900px;
+        min-height: 65vh;
+        background-color: @blanco;
         transition: 0.2s;
         border-radius: 10px;
         box-shadow: 0 0 10px 5px rgba(0,0,0, 0.5);
         position: relative;
         display: flex;
+        flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
+        position: relative;
+        overflow: hidden;
+        .hoja-preguntas-dad{
+            width: 100%;
+            height: 65vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            transition: 0.2s;
+            .hoja-preguntas{
+                min-width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+        }
         &--active{
             transform: scale(1);
             transition: 0.2s;
         }
-        #cierre-modal{
+        #cierreModal{
             position: absolute;
             font-size: 30px;
             right: 5px;
             top: 5px;
             cursor: pointer;
+        }
+        .pasos-formulario{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 10px;
+            .mx-10{
+                margin: 0px 10px;
+            }
+            .linea-number{
+                border: 2px solid #000;
+                z-index: -1;
+                position: absolute;
+                left: 0;
+            }
+            .number{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                border: 1px solid #000000;
+                background: #ffffff;
+                color: #000000;
+                border-radius: 100%;
+                transition: 0.2s;
+                cursor: pointer;
+                &--active{
+                    border: 1px solid #ffffff;
+                    background: #000000;
+                    color: #ffffff;
+                }
+                &--grande{
+                    transform: scale(1.2);
+                }
+                &:hover{
+                    border: 1px solid #ffffff;
+                    background: #000000;
+                    color: #ffffff;
+                }
+            }
         }
     }
 }
@@ -450,7 +502,7 @@ body{
                     display: flex;
                     justify-content: center;
                 }
-                #logo-home{
+                #logoHome{
                     min-height: 100px;
                     width: inherit;
                 }
