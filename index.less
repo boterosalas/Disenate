@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+.overflow-y-auto{
+    overflow-y: auto;
+}
 body{
     max-width: 100vw;
     overflow-x: hidden;
@@ -326,11 +329,6 @@ body{
         }
     }
 }
-.form-group{
-    .advertencia_tipo_campo{
-        display: none;
-    }
-}
 .titles{
     text-align: center;
     width: 100%;
@@ -339,18 +337,33 @@ body{
     font-weight: bold;
     font-size: 30px;
 }
+.fondo-modal{
+    transform: scale(0);
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    border: 1px solid;
+    overflow: hidden;
+    &--active{
+        transform: scale(1);
+    }
+}
 .modal-dad-formulario{
     transform: scale(0);
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     position: fixed;
     top: 0;
     left: 0;
     justify-content: center;
     align-items: center;
-    background: rgba(204, 204, 204, 0.7);
-    z-index: 20;
+    z-index: 30;
+    overflow: hidden;
     &--active{
         transform: scale(1);
     }
@@ -358,82 +371,150 @@ body{
         transform: scale(0);
         width: 100%;
         min-width: 320px;
-        max-width: 900px;
-        min-height: 65vh;
+        max-width: 1000px;
+        max-height: 100vh;
         background-color: @blanco;
         transition: 0.2s;
-        border-radius: 10px;
+        border-radius: 5px;
         box-shadow: 0 0 10px 5px rgba(0,0,0, 0.5);
         position: relative;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
         position: relative;
         overflow: hidden;
         .hoja-preguntas-dad{
             width: 100%;
-            height: 65vh;
             display: flex;
             justify-content: flex-start;
-            align-items: center;
             transition: 0.2s;
+            max-height: 85vh;
             .hoja-preguntas{
                 min-width: 100%;
                 display: flex;
                 justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                overflow-y: auto;
+                .separador{
+                    width: 50%;
+                }
+                .contenedor-checkbox{
+                    p{
+                        display: block;
+                    }
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    overflow-y: auto;
+                    .form-group.checkbox-group{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        label{
+                            display: inline-block;
+                            width: 90%;
+                        }
+                        input{
+                            display: inline-block;
+                            width: 10%;
+                        }
+                    }
+                }
+                .form-group{
+                    color: @azul;
+                    font-weight: bold;
+                    padding: 8px;
+                    display: block;
+                    .advertencia_tipo_campo{
+                        display: none;
+                    }
+                    input{
+                        display: block;
+                        width: 100%;
+                        background: none;
+                        border: none;
+                        padding: 10px 8px;
+                        font-size: 18px;
+                        border: 1px solid transparent;
+                        border-radius: 3px;
+                        transition: 0.4s;
+                    }
+                    input:hover{
+                        outline: none;
+                        border: 1px dashed rgba(27, 60, 89, 0.6);
+                        box-shadow: 0 0 3px rgba(27, 60, 89, 0.6);
+                    }
+                    input:focus{
+                        outline: none;
+                        border: 1px solid rgba(27, 60, 89, 0.6);
+                        box-shadow: 0 0 5px rgba(27, 60, 89, 0.6);
+                    }
+                    label{
+                        display: block;
+                        width: 100%;
+                    }
+                }
             }
         }
         &--active{
             transform: scale(1);
             transition: 0.2s;
         }
-        #cierreModal{
-            position: absolute;
-            font-size: 30px;
-            right: 5px;
-            top: 5px;
-            cursor: pointer;
+        .contenedor-cierre-modal{
+            position: relative;
+            height: 5%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            #cierreModal{
+                position: relative;
+                font-size: 30px;
+                cursor: pointer;
+            }
         }
         .pasos-formulario{
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute;
-            bottom: 10px;
-            .mx-10{
-                margin: 0px 10px;
-            }
-            .linea-number{
-                border: 2px solid #000;
-                z-index: -1;
-                position: absolute;
-                left: 0;
-            }
-            .number{
+            padding: 10px;
+            height: 10%;
+            .contenedor-numeros{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 30px;
-                height: 30px;
-                border: 1px solid #000000;
-                background: #ffffff;
-                color: #000000;
-                border-radius: 100%;
-                transition: 0.2s;
-                cursor: pointer;
-                &--active{
-                    border: 1px solid #ffffff;
-                    background: #000000;
-                    color: #ffffff;
+                position: relative;
+                .mx-10{
+                    margin: 0px 10px;
                 }
-                &--grande{
-                    transform: scale(1.2);
+                .linea-number{
+                    border: 2px solid #000;
+                    z-index: -1;
+                    position: absolute;
+                    left: 0;
                 }
-                &:hover{
-                    border: 1px solid #ffffff;
-                    background: #000000;
-                    color: #ffffff;
+                .number{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #000000;
+                    background: #ffffff;
+                    color: #000000;
+                    border-radius: 100%;
+                    transition: 0.2s;
+                    cursor: pointer;
+                    &--active{
+                        border: 1px solid #ffffff;
+                        background: #000000;
+                        color: #ffffff;
+                    }
+                    &--grande{
+                        transform: scale(1.2);
+                    }
+                    &:hover{
+                        border: 1px solid #ffffff;
+                        background: #000000;
+                        color: #ffffff;
+                    }
                 }
             }
         }

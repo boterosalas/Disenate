@@ -1,5 +1,6 @@
 var button_questionarie = document.getElementById('cuentanos');
 var modal = document.getElementById('modal_dad_formulario');
+var fondo_modal = document.getElementById('fondo_modal');
 var modal_ch = document.getElementById('modal_ch');
 var cierre_modal = document.getElementById('cierreModal');
 var boton_menu_mobile = document.getElementById('boton_menu_mobile');
@@ -32,17 +33,26 @@ function animacion_number(elem,x){
 button_questionarie.addEventListener("click", function(){
     modal.classList.add('modal-dad-formulario--active');
     modal_ch.classList.add('modal-ch--active');
+    fondo_modal.classList.add('fondo-modal--active');
 });
 modal.addEventListener("click", function(e){
     if(e.target.getAttribute('id') == 'cierreModal'){
         console.log(e.target);
-        setTimeout(function(){modal.classList.remove('modal-dad-formulario--active');},200);
+        setTimeout(function(){modal.classList.remove('modal-dad-formulario--active');fondo_modal.classList.remove('fondo-modal--active');},200);
         modal_ch.classList.remove('modal-ch--active');
+        document.getElementById('number_1').classList.add('number--grande');
+        document.getElementById('number_1').classList.add('number--active');
+        hoja_preguntas_dad.style.transform = "translateX(0%)";
+        animacion_number(linea_number,0);
+        document.getElementById('number_2').classList.remove('number--active');
+        document.getElementById('number_3').classList.remove('number--active');
+        document.getElementById('number_2').classList.remove('number--grande');
+        document.getElementById('number_3').classList.remove('number--grande');
     }
     else if(e.target.getAttribute('id') == 'number_1'){
         document.getElementById('number_1').classList.add('number--grande');
         document.getElementById('number_1').classList.add('number--active');
-        hoja_preguntas_dad.style.marginLeft = "0%";
+        hoja_preguntas_dad.style.transform = "translateX(0%)";
         animacion_number(linea_number,0);
         document.getElementById('number_2').classList.remove('number--active');
         document.getElementById('number_3').classList.remove('number--active');
@@ -53,7 +63,7 @@ modal.addEventListener("click", function(e){
         document.getElementById('number_2').classList.add('number--grande');
         document.getElementById('number_1').classList.add('number--active');
         document.getElementById('number_2').classList.add('number--active');
-        hoja_preguntas_dad.style.marginLeft = "-200%";
+        hoja_preguntas_dad.style.transform = "translateX(-100%)";
         animacion_number(linea_number,50);
         document.getElementById('number_3').classList.remove('number--active');
         document.getElementById('number_1').classList.remove('number--grande');
@@ -66,36 +76,10 @@ modal.addEventListener("click", function(e){
         document.getElementById('number_3').classList.add('number--active');
         document.getElementById('number_1').classList.remove('number--grande');
         document.getElementById('number_2').classList.remove('number--grande');
-        hoja_preguntas_dad.style.marginLeft = "-400%";
+        hoja_preguntas_dad.style.transform = "translateX(-200%)";
         animacion_number(linea_number,100);
     }
 })
 boton_menu_mobile.addEventListener("click",function(){
     menu_mobile.classList.toggle('mega-menu-dad-active');
 })
-
-//validación tipo texto únicamente
-for(let i = 0; i < input_text.length; i++){
-    input_text[i].addEventListener('input',function(e){
-       // var valnum = /^[0-9]*$/;
-        let valor = this.value;
-        var valnum = /[^aA-zZ][^0-9]*$/;
-        if(valor!=undefined && valor !=""){
-            var hijos = this.parentNode.children;
-            if(valnum.test(this.value)){
-                for(let j = 0; j < hijos.length; j++){
-                    if(hijos[j].classList=="advertencia_tipo_campo"){
-                        hijos[j].style.display="block";
-                    }
-                }
-            }
-            else{
-                for(let j = 0; j < hijos.length; j++){
-                    if(hijos[j].classList=="advertencia_tipo_campo"){
-                        hijos[j].style.display="none";
-                    }
-                }
-            }
-        }
-    })
-}

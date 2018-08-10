@@ -115,25 +115,81 @@
                 </div>
             </div>
         </div>
+        <div class="fondo-modal" id="fondo_modal"></div>
         <div class="modal-dad-formulario" id="modal_dad_formulario">
             <div class="modal-ch" id="modal_ch">
-                <i class="far fa-times-circle" id="cierreModal"></i>
+                <div class="contenedor-cierre-modal"><i class="far fa-times-circle" id="cierreModal"></i></div>
                 <div class="hoja-preguntas-dad" id="hoja_preguntas_dad">
                     <div class="hoja-preguntas" id="hoja1">
-                        Hoja Preguntas 1
-                        <div class="form-group">
-                            <input type="text" class="input_text">
-                            <p class="advertencia_tipo_campo">Campo incorrecto</p>
+                        <div class="separador">
+                            <p>Queremos entenderte mejor, este formulario es para que definamos fácilmente los servicios que te podemos brindar.</p>
+                            <p>¡Te llamaremos lo antes posible para empezar a trabajar en tu proyecto!</p>
+                        </div>
+                        <div class="separador">
+                            <div class="form-group">
+                                <label for="input_correo_electronico">¿Cuál es tu correo electrónico?</label>
+                                <input type="text" id="input_correo_electronico" class="input_text" placeholder="E-mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_nombre">¿Cuál es tu nombre o el de tu empresa?</label>
+                                <input type="text" id="input_nombre" class="input_text" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_numero_contacto">¿A qué número te podemos contactar?</label>
+                                <input type="text" id="input_numero_contacto" class="input_text" placeholder="Número">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_negocio">¿De qué se trata tu negocio?</label>
+                                <input type="text" id="input_negocio" class="input_text" placeholder="Cuéntanos">
+                            </div>
                         </div>
                     </div>
-                    <div class="hoja-preguntas" id="hoja2">Hoja Preguntas 2</div>
+                    <div class="hoja-preguntas overflow-y-auto" id="hoja2">
+                        <div class="contenedor-checkbox">
+                            <p>¿Qué podemos hacer por ti?</p>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" name="que_podemos_hacer_por_ti" id="que_podemos_r1">
+                                <label for="que_podemos_r1">Reformas estéticas (Cambio de piso, paredes, techo, entre otros)</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" name="que_podemos_hacer_por_ti" id="que_podemos_r2">
+                                <label for="que_podemos_r2">Mantenimiento locativo (Reparaciones, instalaciones, modificaciones simples de local)</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" name="que_podemos_hacer_por_ti" id="que_podemos_r3">
+                                <label for="que_podemos_r3">Diseño simple del local (Adhesivos, pintura, luces, distribución de mobiliario, asesoría de diseño)</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" name="que_podemos_hacer_por_ti" id="que_podemos_r4">
+                                <label for="que_podemos_r4">Rediseño del local (Esto puede incluir reformas estructurales y cambios en el espacio)</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" name="que_podemos_hacer_por_ti" id="que_podemos_r5">
+                                <label for="que_podemos_r5">Cambio de mobiliario (Alquiler, diseño de mobiliario, fabricación)</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" name="que_podemos_hacer_por_ti" id="que_podemos_r6">
+                                <label for="que_podemos_r6">Diseño e imagen de marca (Avisos, afiches, letreros, tarjetas...etc)</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" name="que_podemos_hacer_por_ti" id="que_podemos_r7">
+                                <label for="que_podemos_r7">Marketing y Publicidad (Pág web, redes sociales, volanteo)</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" name="que_podemos_hacer_por_ti" id="que_podemos_r8">
+                                <label for="que_podemos_r8">Estrategias de marketing (Concursos, promociones, eventos...)</label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="hoja-preguntas" id="hoja3">Hoja Preguntas 3</div>
                 </div>
                 <div class="pasos-formulario" id="pasos_formulario">
-                    <span class="linea-number" id="linea_number"></span>
-                    <div class="number number--active number--grande" id="number_1">1</div>
-                    <div class="number mx-10" id="number_2">2</div>
-                    <div class="number" id="number_3">3</div>
+                    <div class="contenedor-numeros">
+                        <span class="linea-number" id="linea_number"></span>
+                        <div class="number number--active number--grande" id="number_1">1</div>
+                        <div class="number mx-10" id="number_2">2</div>
+                        <div class="number" id="number_3">3</div>
+                    </div>
                 </div>
             </div>
         </div>
