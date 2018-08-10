@@ -15,5 +15,5 @@ window.addEventListener('load',function(){
         var seccion = sessionStorage.getItem('service');
         var alto = document.getElementById(seccion).offsetTop-60;
         animacion_scroll(alto);
-    }
+    }//
 })
