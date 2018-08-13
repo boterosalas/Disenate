@@ -412,9 +412,35 @@ body{
                             display: inline-block;
                             width: 90%;
                         }
-                        input{
-                            display: inline-block;
-                            width: 10%;
+                        input[type="checkbox"]{
+                            display: none;
+                            + .checkbox_label {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 10%;
+                                span{
+                                    border: 1px solid;
+                                    width: 20px;
+                                    height: 20px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    transition: 0.2s;
+                                    i{
+                                        transform: scale(0) rotate(180deg);
+                                        transition: 0.2s;
+                                    }
+                                }
+                            }
+                            &:checked{
+                                + .checkbox_label i{
+                                    transform: scale(1) rotate(0deg);
+                                }
+                                + .checkbox_label span{
+                                    border: 1px solid transparent;
+                                }
+                            }
                         }
                     }
                 }
@@ -466,6 +492,8 @@ body{
             align-items: center;
             #cierreModal{
                 position: relative;
+                right: 5px;
+                top: 5px;
                 font-size: 30px;
                 cursor: pointer;
             }
