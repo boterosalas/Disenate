@@ -3,7 +3,7 @@ window.addEventListener('load',function(){
     function animacion_scroll(y){
         var comienzo = setInterval(frame, 5);
         function frame() {
-            if (pos == y) {
+            if (pos >= y) {
                 clearInterval(comienzo);
             } else {
                 window.scrollBy(0,10);
@@ -15,5 +15,6 @@ window.addEventListener('load',function(){
         var seccion = sessionStorage.getItem('service');
         var alto = document.getElementById(seccion).offsetTop-60;
         animacion_scroll(alto);
-    }//
+        console.log(alto);
+    }
 })

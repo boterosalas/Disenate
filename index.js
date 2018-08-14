@@ -3,8 +3,6 @@ var modal = document.getElementById('modal_dad_formulario');
 var fondo_modal = document.getElementById('fondo_modal');
 var modal_ch = document.getElementById('modal_ch');
 var cierre_modal = document.getElementById('cierreModal');
-var boton_menu_mobile = document.getElementById('boton_menu_mobile');
-var menu_mobile = document.getElementById('menuMobile');
 var pasos_formulario = document.getElementById('pasos_formulario');
 var linea_number = document.getElementById('linea_number');
 var hoja_preguntas_dad = document.getElementById('hoja_preguntas_dad');
@@ -79,7 +77,4 @@ modal.addEventListener("click", function(e){
         hoja_preguntas_dad.style.transform = "translateX(-200%)";
         animacion_number(linea_number,100);
     }
-})
-boton_menu_mobile.addEventListener("click",function(){
-    menu_mobile.classList.toggle('mega-menu-dad-active');
 })

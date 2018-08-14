@@ -37,42 +37,6 @@ body{
         display: none;
     }
 }
-.mega-menu-dad{
-    background-color: @azul;
-    height: 60px;
-    position: fixed;
-    top: 0px;
-    opacity: 0.95;
-    z-index: 10;
-    max-width: 100%;
-    nav.mega-menu-nav{
-        list-style: none;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 10px;
-        .items-dad{
-            display: flex;
-            flex-direction: row;
-            #logoHome{
-                width: 200px;
-                background-image: url("img/logo-disenate.png");
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                align-items: flex-start;
-            }
-            li{
-                display: flex;
-                align-items: center;
-                padding: 10px;
-                cursor: pointer;
-                color: @blanco;
-            }
-        }
-    }
-}
 .principal-banner-dad{
     margin-top: 60px;
     background-color: @gris;
@@ -616,47 +580,6 @@ body{
                     width: 25%;
                 }
             }
-        }
-    }
-    .mega-menu-dad{
-        height: 100vh;
-        overflow-y: auto;
-        opacity: 0.95;
-        padding-top: 20px;
-        position: fixed;
-        margin-left: 100%;
-        margin-top: 60px;
-        transition: 0.2s;
-        &-active{
-            margin-left: 0%;
-        }
-        nav.mega-menu-nav{
-            flex-direction: column;
-            height: 100vh;
-            width: 100%;
-            min-height: 400px;
-            justify-content: flex-start;
-            align-items: flex-start;
-            .items-dad{
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                li{
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                }
-                #logoHome{
-                    min-height: 100px;
-                    width: inherit;
-                }
-            }
-        }
-    }
-    .menu-mobile{
-        display: flex;
-        .fa-ellipsis-v{
-            display: inherit;
         }
     }
 }
